@@ -2,6 +2,9 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## backend repository
+[backend repository link](https://github.com/mindy-d-tran/blog-app-backend)
+
 ## Available Scripts
 
 In the project directory, you can run:
