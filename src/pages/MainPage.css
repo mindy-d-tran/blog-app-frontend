@@ -1,5 +1,8 @@
 .launch-page{
     display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
 }
 .logo-big{
     width: 500px;
