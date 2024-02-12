@@ -147,7 +147,7 @@ function SignInUp(props) {
               ref={passwordSIInputRef}
               name="passwordSI"
               id="passwordSI"
-              type="text"
+              type="password"
               placeholder="Password"
             />
 
