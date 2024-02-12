@@ -8,8 +8,9 @@ function SignInUp(props) {
   const userCtx = useContext(UserContext);
   const { setUser } = userCtx;
 
-  // state to change form to sign in or sign up
-  const [createAccount, setCreateAccount] = useState(true);
+  // states
+  const [createAccount, setCreateAccount] = useState(true); // state to change form to sign in or sign up
+  const [errMsg, setErrMsg] = useState(false);
 
   // var for sign up inputs
   const emailInputRef = useRef(null);
@@ -22,6 +23,7 @@ function SignInUp(props) {
   const passwordSIInputRef = useRef(null);
 
   // check if the password is the same for signup
+  // help from https://stackoverflow.com/questions/45101515/why-setcustomvalidity-not-working-in-react-app
   const handlePasswordCheck = (e) => {
     if (passwordInputRef.current.value !== passwordCheckInputRef.current.value)
       e.target.setCustomValidity("Passwords must match");
@@ -32,14 +34,20 @@ function SignInUp(props) {
   const handleSignUp = async (e) => {
     e.preventDefault();
 
-    const res = await axios.post("http://localhost:4000/api/users", {
-      email: emailInputRef.current.value,
-      username: usernameInputRef.current.value,
-      password: passwordInputRef.current.value,
-    });
+    try {
+      const res = await axios.post("http://localhost:4000/api/users", {
+        email: emailInputRef.current.value,
+        username: usernameInputRef.current.value,
+        password: passwordInputRef.current.value,
+      });
 
-    console.log(res.data);
-    setUser(res.data);
+      console.log(res.data);
+      setUser(res.data);
+      setErrMsg(false);
+    } catch (error) {
+      console.log(error);
+      setErrMsg(true);
+    }
   };
 
   return (
@@ -66,6 +74,8 @@ function SignInUp(props) {
               placeholder="Username"
               required
             />
+            {errMsg ? <p>Username or Email Already in use</p> : <></>}
+
             <label htmlFor="password">Password</label>
             <input
               ref={passwordInputRef}
