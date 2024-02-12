@@ -43,7 +43,7 @@ function SignInUp(props) {
         <div>
           <form onSubmit={handleSignUp}>
             <h3>Sign Up</h3>
-
+            <label htmlFor="email">Email</label>
             <input
               ref={emailInputRef}
               name="email"
@@ -52,6 +52,7 @@ function SignInUp(props) {
               placeholder="Email"
               required
             />
+            <label htmlFor="username">Username</label>
             <input
               ref={usernameInputRef}
               name="username"
@@ -59,6 +60,7 @@ function SignInUp(props) {
               placeholder="Username"
               required
             />
+            <label htmlFor="password">Password</label>
             <input
               ref={passwordInputRef}
               name="password"
@@ -66,13 +68,14 @@ function SignInUp(props) {
               type="text"
               placeholder="Password"
             />
+            <label htmlFor="passwordCheck">Confirm Password</label>
             <input
               ref={passwordCheckInputRef}
               onChange={handlePasswordCheck}
               id="passwordCheck"
               name="passwordCheck"
               type="text"
-              placeholder="Repeat Password"
+              placeholder="Confirm Password"
             />
             <button type="submit">Sign Up</button>
           </form>
@@ -91,6 +94,7 @@ function SignInUp(props) {
           >
             <h3>Sign In</h3>
 
+            <label htmlFor="emailOrUsername">Email or Username</label>
             <input
               //   ref={emailInputRef}
               name="emailOrUsername"
@@ -99,10 +103,11 @@ function SignInUp(props) {
               placeholder="Email or Username"
               required
             />
+            <label htmlFor="passwordSI">Password</label>
             <input
               //   ref={}
-              name="password"
-              id="password"
+              name="passwordSI"
+              id="passwordSI"
               type="text"
               placeholder="Password"
             />
