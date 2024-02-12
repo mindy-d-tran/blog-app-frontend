@@ -1,4 +1,9 @@
-
+.App{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
 .App-link {
   color: #61dafb;
