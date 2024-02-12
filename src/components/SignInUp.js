@@ -1,26 +1,51 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
+
+import "./SignInUp.css";
 
 function SignInUp(props) {
   // state to change form to sign in or sign up
   const [createAccount, setCreateAccount] = useState(true);
+
+  // var for inputs
+  const emailInputRef = useRef(null);
+  const usernameInputRef = useRef(null);
+  const passwordInputRef = useRef(null);
+  const passwordCheckInputRef = useRef(null);
+
+  // check if the password is the same for signup
+  const handlePasswordCheck = (e) => {
+    if (passwordInputRef.current.value !== passwordCheckInputRef.current.value)
+      e.target.setCustomValidity("Passwords must match");
+    else e.target.setCustomValidity("");
+  };
+
+  // handle signup
+  const handleSignUp = (e) => {
+    e.preventDefault();
+    const newUser = {
+      email: emailInputRef.current.value,
+      username: usernameInputRef.current.value,
+      password: passwordInputRef.current.value,
+    };
+    console.log(newUser);
+  };
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const res = await fetch("http://localhost:4000/");
+    };
+  }, []);
 
   return (
     <section>
       {createAccount ? (
         // signup form
         <div>
-          <form
-            // onSubmit={handleSignUp}
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              padding: "10px",
-            }}
-          >
+          <form onSubmit={handleSignUp}>
             <h3>Sign Up</h3>
 
             <input
-              //   ref={emailInputRef}
+              ref={emailInputRef}
               name="email"
               id="email"
               type="email"
@@ -28,19 +53,22 @@ function SignInUp(props) {
               required
             />
             <input
+              ref={usernameInputRef}
               name="username"
               type="text"
               placeholder="Username"
               required
             />
             <input
-              //   ref={}
+              ref={passwordInputRef}
               name="password"
               id="password"
               type="text"
               placeholder="Password"
             />
             <input
+              ref={passwordCheckInputRef}
+              onChange={handlePasswordCheck}
               id="passwordCheck"
               name="passwordCheck"
               type="text"
@@ -59,12 +87,7 @@ function SignInUp(props) {
         // sign in form
         <div>
           <form
-            // onSubmit={handleSignUp}
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              padding: "10px",
-            }}
+          // onSubmit={handleSignUp}
           >
             <h3>Sign In</h3>
 
