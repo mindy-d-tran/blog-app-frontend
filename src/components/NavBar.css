@@ -1,0 +1,40 @@
+nav {
+  display: flex;
+}
+a {
+  text-decoration: none;
+}
+
+/*start of nav style*/
+/* nav {
+  background-color: var(--main-color);
+} */
+nav > ul {
+  display: flex;
+  align-items: center;
+  background-color: var(--main-color);
+  list-style-type: none;
+  width: 100vw;
+}
+li {
+  padding: 1em;
+}
+li a:hover:not(.active) {
+  border-bottom: 3px solid var(--accent-color);
+
+}
+
+.active {
+  border-bottom: 2px solid var(--dark-color);
+}
+.active > a {
+  color: white;
+}
+
+/* li:first-child {
+  padding: 9px 0.5em 5px;
+} */
+#menu-logo {
+  width: 37px;
+}
+/*end of nav style*/
