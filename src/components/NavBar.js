@@ -1,10 +1,18 @@
+import { Link } from "react-router-dom";
+
 function NavBar() {
   return (
     <nav>
       <ul>
-        <li>Home</li>
-        <li></li>
-        <li>About</li>
+        <li>
+          <Link to="/home">Home</Link>
+        </li>
+        {/* <li>
+          <Link to="/create-post">Create Post</Link>
+        </li> */}
+        <li>
+          <Link to="/setting">Setting</Link>
+        </li>
       </ul>
       <form>
         <input type="text" placeholder="Search" />
