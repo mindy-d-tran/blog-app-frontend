@@ -1,4 +1,4 @@
-import './NavBar.css';
+import "./NavBar.css";
 import { Link } from "react-router-dom";
 
 function NavBar() {
@@ -14,10 +14,13 @@ function NavBar() {
         <li>
           <Link to="/setting">Setting</Link>
         </li>
+        <li>
+          <form>
+            <input type="text" placeholder="Search" />
+            <button>search</button>
+          </form>
+        </li>
       </ul>
-      <form>
-        <input type="text" placeholder="Search" />
-      </form>
     </nav>
   );
 }
