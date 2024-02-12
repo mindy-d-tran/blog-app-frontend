@@ -10,7 +10,7 @@ function SignInUp(props) {
 
   // states
   const [createAccount, setCreateAccount] = useState(true); // state to change form to sign in or sign up
-  const [errMsg, setErrMsg] = useState(false);
+  const [errMsg, setErrMsg] = useState("");
 
   // var for sign up inputs
   const emailInputRef = useRef(null);
@@ -43,10 +43,27 @@ function SignInUp(props) {
 
       console.log(res.data);
       setUser(res.data);
-      setErrMsg(false);
+      setErrMsg("");
     } catch (error) {
       console.log(error);
-      setErrMsg(true);
+      setErrMsg(error.response.data);
+    }
+  };
+
+  const handleSignIn = async (e) => {
+    e.preventDefault();
+    try {
+      const res = await axios.put("http://localhost:4000/api/users/login", {
+        emailOrUsername: emailOrUsernameInputRef.current.value,
+        password: passwordSIInputRef.current.value,
+      });
+
+      console.log(res.data);
+      setUser(res.data);
+      setErrMsg("");
+    } catch (error) {
+      console.log(error);
+      setErrMsg(error.response.data);
     }
   };
 
@@ -55,7 +72,7 @@ function SignInUp(props) {
       {createAccount ? (
         // signup form
         <div>
-          <form onSubmit={handleSignUp}>
+          <form className="sign-in-up-form" onSubmit={handleSignUp}>
             <h3>Sign Up</h3>
             <label htmlFor="email">Email</label>
             <input
@@ -66,6 +83,9 @@ function SignInUp(props) {
               placeholder="Email"
               required
             />
+
+            {errMsg.includes("Email") ? <p>{errMsg}</p> : <></>}
+
             <label htmlFor="username">Username</label>
             <input
               ref={usernameInputRef}
@@ -74,7 +94,8 @@ function SignInUp(props) {
               placeholder="Username"
               required
             />
-            {errMsg ? <p>Username or Email Already in use</p> : <></>}
+
+            {errMsg.includes("Username") ? <p>{errMsg}</p> : <></>}
 
             <label htmlFor="password">Password</label>
             <input
@@ -105,9 +126,7 @@ function SignInUp(props) {
       ) : (
         // sign in form
         <div>
-          <form
-          // onSubmit={handleSignUp}
-          >
+          <form className="sign-in-up-form" onSubmit={handleSignIn}>
             <h3>Sign In</h3>
 
             <label htmlFor="emailOrUsername">Email or Username</label>
@@ -119,6 +138,9 @@ function SignInUp(props) {
               placeholder="Email or Username"
               required
             />
+
+            {errMsg.includes(["Can't"]) ? <p>{errMsg}</p> : <></>}
+
             <label htmlFor="passwordSI">Password</label>
             <input
               ref={passwordSIInputRef}
@@ -127,6 +149,8 @@ function SignInUp(props) {
               type="text"
               placeholder="Password"
             />
+
+            {errMsg.includes(["match"]) ? <p>{errMsg}</p> : <></>}
 
             <button type="submit">Sign In</button>
           </form>
