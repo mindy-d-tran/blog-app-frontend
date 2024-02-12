@@ -3,12 +3,10 @@ nav {
 }
 a {
   text-decoration: none;
+  color: var(--text-color);
 }
 
 /*start of nav style*/
-/* nav {
-  background-color: var(--main-color);
-} */
 nav > ul {
   display: flex;
   align-items: center;
