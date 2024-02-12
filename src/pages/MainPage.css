@@ -1,9 +1,15 @@
 .launch-page{
     display: flex;
-    height: 100vh;
+    height: 90vh;
     justify-content: center;
     align-items: center;
 }
 .logo-big{
-    width: 500px;
+    width: 400px;
+}
+
+.hero-area{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
