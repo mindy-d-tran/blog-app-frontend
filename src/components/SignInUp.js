@@ -1,16 +1,25 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useRef, useContext } from "react";
+import axios from "axios";
+import { UserContext } from "../context/UserContext";
 
 import "./SignInUp.css";
 
 function SignInUp(props) {
+  const userCtx = useContext(UserContext);
+  const { setUser } = userCtx;
+
   // state to change form to sign in or sign up
   const [createAccount, setCreateAccount] = useState(true);
 
-  // var for inputs
+  // var for sign up inputs
   const emailInputRef = useRef(null);
   const usernameInputRef = useRef(null);
   const passwordInputRef = useRef(null);
   const passwordCheckInputRef = useRef(null);
+
+  // var for sign in inputs
+  const emailOrUsernameInputRef = useRef(null);
+  const passwordSIInputRef = useRef(null);
 
   // check if the password is the same for signup
   const handlePasswordCheck = (e) => {
@@ -20,21 +29,18 @@ function SignInUp(props) {
   };
 
   // handle signup
-  const handleSignUp = (e) => {
+  const handleSignUp = async (e) => {
     e.preventDefault();
-    const newUser = {
+
+    const res = await axios.post("http://localhost:4000/api/users", {
       email: emailInputRef.current.value,
       username: usernameInputRef.current.value,
       password: passwordInputRef.current.value,
-    };
-    console.log(newUser);
-  };
+    });
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const res = await fetch("http://localhost:4000/");
-    };
-  }, []);
+    console.log(res.data);
+    setUser(res.data);
+  };
 
   return (
     <section>
@@ -96,7 +102,7 @@ function SignInUp(props) {
 
             <label htmlFor="emailOrUsername">Email or Username</label>
             <input
-              //   ref={emailInputRef}
+              ref={emailOrUsernameInputRef}
               name="emailOrUsername"
               id="emailOrUsername"
               type="text"
@@ -105,7 +111,7 @@ function SignInUp(props) {
             />
             <label htmlFor="passwordSI">Password</label>
             <input
-              //   ref={}
+              ref={passwordSIInputRef}
               name="passwordSI"
               id="passwordSI"
               type="text"
