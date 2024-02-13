@@ -26,7 +26,7 @@ function Post({ post }) {
         `http://localhost:4000/api/posts/${singlePost._id}/unlike`,
         { user_id: user._id }
       );
-      console.log(res.data);
+      // console.log(res.data);
       setSinglePost(res.data.post);
     } catch (error) {
       console.log(error);
@@ -38,7 +38,7 @@ function Post({ post }) {
         `http://localhost:4000/api/posts/${singlePost._id}/like`,
         { user_id: user._id }
       );
-      console.log(res.data);
+      // console.log(res.data);
       setSinglePost(res.data.post);
     } catch (error) {
       console.log(error);
