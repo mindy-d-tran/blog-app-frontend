@@ -48,12 +48,14 @@ function Comment({ comment }) {
       <p>{commentState.user_id.username}</p>
       <p>{commentState.comment_content}</p>
       <section className="postbuttons">
-        {commentState.comment_like.find((c) => c.user_id === user._id) ? (
-          <FontAwesomeIcon onClick={handleOnClickLike} icon={faHeart} />
-        ) : (
-          <FontAwesomeIcon onClick={handleOnClickUnlike} icon={fasHeart} />
-        )}
-        <FontAwesomeIcon icon={faComment} />
+        <span>
+          {commentState.comment_like.find((c) => c.user_id === user._id) ? (
+            <FontAwesomeIcon onClick={handleOnClickLike} icon={faHeart} />
+          ) : (
+            <FontAwesomeIcon onClick={handleOnClickUnlike} icon={fasHeart} />
+          )}{" "}
+          {commentState.comment_like.length}{" "}
+        </span>
         <FontAwesomeIcon icon={faShareFromSquare} />
       </section>
     </div>
