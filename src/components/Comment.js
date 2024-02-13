@@ -1,4 +1,5 @@
-function Comment() {
+function Comment({comment}) {
+  console.log(comment)
   return (
     <div className="comment">
       <h3>Comment</h3>
