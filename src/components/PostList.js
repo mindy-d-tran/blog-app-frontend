@@ -2,7 +2,7 @@ import Post from "./Post";
 
 function PostList({ posts }) {
   return (
-    <section>
+    <section className='post-list'>
       {posts.map((post) => (
         <Post key={post._id} post={post} />
       ))}
