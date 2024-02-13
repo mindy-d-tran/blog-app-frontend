@@ -1,4 +1,4 @@
-import NavBar from "../components/NavBar";
+
 import PostList from "../components/PostList";
 
 import { useState, useEffect } from "react";
