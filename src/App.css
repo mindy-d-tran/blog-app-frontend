@@ -8,3 +8,18 @@
 .App-link {
   color: #61dafb;
 }
+
+svg{
+  color: var(--dark-color);
+}
+
+.post{
+  width: 75vw;
+  margin: 2em;
+  padding: 1em;
+  background-color: var(--main-color);
+}
+.comment{
+  margin: 1em 0;
+  background-color: var(--accent-color);
+}
