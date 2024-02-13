@@ -15,6 +15,7 @@ import SettingPage from "./pages/SettingPage";
 
 //importing components
 import NavBar from "./components/NavBar";
+import PostPage from "./pages/PostPage";
 
 function App() {
   // creeating state for user
@@ -26,7 +27,7 @@ function App() {
         <NavBar />
         <Routes>
           <Route path="/" element={<MainPage />} />
-          <Route path="/home" element={<HomePage />} />
+          <Route path="/post/:id" element={<PostPage />} />
           <Route path="/setting" element={<SettingPage />} />
         </Routes>
       </div>
