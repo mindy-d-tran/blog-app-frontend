@@ -24,6 +24,8 @@ function SettingPage() {
   const [editUsername, setEditUsername] = useState(false);
   const [editEmail, setEditEmail] = useState(false);
 
+  const [errMsg, setErrMsg] = useState(null);
+
   // states to handle change in input
   const [username, setUsername] = useState(user.username);
   const [email, setEmail] = useState(user.email);
@@ -64,8 +66,10 @@ function SettingPage() {
       console.log(res.data);
       setUser(res.data);
       setEditUsername(!editUsername);
+      setErrMsg(null);
     } catch (error) {
-      console.log(error.message);
+      console.log(error);
+      setErrMsg(error.response.data);
     }
   };
 
@@ -86,6 +90,7 @@ function SettingPage() {
               type="text"
               value={username}
             />
+            {errMsg? <p>Username is already taken</p> : <></>}
             <button type="submit">submit</button>
           </form>
         ) : (
