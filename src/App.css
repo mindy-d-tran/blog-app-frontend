@@ -3,6 +3,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  overflow-x: hidden;
 }
 
 .App-link {
@@ -14,8 +15,8 @@ svg{
 }
 
 .post{
-  width: 75vw;
-  margin: 2em;
+  width: 40vw;
+  margin: 1em;
   padding: 1em;
   background-color: var(--main-color);
 }
