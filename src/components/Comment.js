@@ -6,7 +6,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import {
   faHeart as fasHeart,
-  faComment,
   faShareFromSquare,
 } from "@fortawesome/free-regular-svg-icons";
 
