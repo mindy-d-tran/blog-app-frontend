@@ -79,6 +79,7 @@ function PostDetail({ id }) {
             <p className="post-content">{post.post_content.text}</p>
             <p>hash tags</p>
             <section className="postbuttons">
+                <span> 
               {post.post_likes.find((p) => p.user_id === user._id) ? (
                 <FontAwesomeIcon onClick={handleOnClickLike} icon={faHeart} />
               ) : (
@@ -86,8 +87,8 @@ function PostDetail({ id }) {
                   onClick={handleOnClickUnlike}
                   icon={fasHeart}
                 />
-              )}
-              <FontAwesomeIcon icon={faComment} />
+              )} {post.post_likes.length} </span>
+              <span><FontAwesomeIcon icon={faComment} /> {post.post_comments.length} </span>
               <FontAwesomeIcon icon={faShareFromSquare} />
             </section>
           </section>
