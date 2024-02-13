@@ -45,44 +45,45 @@ function Post({ post }) {
   return (
     <>
       {singlePost ? (
-        <div className="post">
-          <section className="post-body">
+        <section className="post-body">
+          <div className="userDisplay">
             <img className="user-post-icon" src="" alt="user icon" />
             <p>{singlePost.user_id.username}</p>
-            <Link to={`/post/${post._id}`}>
-              <h2>{singlePost.post_title}</h2>
-              {singlePost.post_content.img ? (
-                <img className="post-img" src="" alt="post img" />
+          </div>
+
+          <Link to={`/post/${post._id}`}>
+            <h2>{singlePost.post_title}</h2>
+            {singlePost.post_content.img ? (
+              <img className="post-img" src="" alt="post img" />
+            ) : (
+              <></>
+            )}
+
+            <p className="post-content">{singlePost.post_content.text}</p>
+          </Link>
+
+          <p>hash tags</p>
+          <section className="postbuttons">
+            <span>
+              {singlePost.post_likes.find((p) => p.user_id === user._id) ? (
+                <FontAwesomeIcon onClick={handleOnClickLike} icon={faHeart} />
               ) : (
-                <></>
-              )}
-
-              <p className="post-content">{singlePost.post_content.text}</p>
-            </Link>
-
-            <p>hash tags</p>
-            <section className="postbuttons">
+                <FontAwesomeIcon
+                  onClick={handleOnClickUnlike}
+                  icon={fasHeart}
+                />
+              )}{" "}
+              {singlePost.post_likes.length}{" "}
+            </span>
+            <Link to={`/post/${post._id}`}>
               <span>
-                {singlePost.post_likes.find((p) => p.user_id === user._id) ? (
-                  <FontAwesomeIcon onClick={handleOnClickLike} icon={faHeart} />
-                ) : (
-                  <FontAwesomeIcon
-                    onClick={handleOnClickUnlike}
-                    icon={fasHeart}
-                  />
-                )}{" "}
-                {singlePost.post_likes.length}{" "}
+                <FontAwesomeIcon icon={faComment} />{" "}
+                {singlePost.post_comments.length}{" "}
               </span>
-              <Link to={`/post/${post._id}`}>
-                <span>
-                  <FontAwesomeIcon icon={faComment} />{" "}
-                  {singlePost.post_comments.length}{" "}
-                </span>
-              </Link>
-              <FontAwesomeIcon icon={faShareFromSquare} />
-            </section>
+            </Link>
+            <FontAwesomeIcon icon={faShareFromSquare} />
           </section>
-        </div>
+        </section>
       ) : (
         <p>loading</p>
       )}
