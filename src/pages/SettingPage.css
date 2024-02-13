@@ -1,0 +1,32 @@
+.settings{
+    width: 75vw;
+    padding: 2em;
+    margin: 1em;
+    border-radius: 2em;
+    /* border: 5px solid var(--main-color); */
+    background-color: var(--accent-color);
+}
+.userDisplay {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--main-color);
+
+}
+.userDisplay img{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid var(--cream);
+    background-color: var(--dark-color);
+}
+
+.settings form{
+    margin: 1em;
+    display: flex;
+    flex-direction: column;
+}
+/* .settings input {
+    display: block;
+} */
