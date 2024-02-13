@@ -1,3 +1,4 @@
+import Comment from "./Comment";
 function CommentsList({ comments }) {
   return (
     <section className="comment-list">
