@@ -29,6 +29,8 @@ function SettingPage() {
   // states to handle change in input
   const [username, setUsername] = useState(user.username);
   const [email, setEmail] = useState(user.email);
+  const [currentPassword, setcurrentPassword] = useState("");
+  const [newPassword, setnewPassword] = useState("");
 
   // functions to display edit account fields forms
   const handleShowEditProfilePic = () => {
@@ -39,18 +41,6 @@ function SettingPage() {
   };
   const handleShowEditEmail = () => {
     setEditEmail(!editEmail);
-  };
-
-  // functions to edit account fields forms
-  //   const handleEditProfilePic = (e) => {
-  //     setEditProfilePic(e.target.value);
-  //     console.log()
-  //   };
-  const handleEditUsernameOnChange = (e) => {
-    setUsername(e.target.value);
-  };
-  const handleEditEmailOnChange = (e) => {
-    setEmail(e.target.value);
   };
 
   // handle submitting forms
@@ -72,7 +62,7 @@ function SettingPage() {
       setErrMsg(error.response.data);
     }
   };
-  
+
   const handleSubmitEmail = async (e) => {
     e.preventDefault();
     try {
@@ -93,6 +83,23 @@ function SettingPage() {
     }
   };
 
+  const handdleSubmitPassword = async (e) => {
+    e.preventDefault();
+    try {
+      const res = await axios.put(
+        `http://localhost:4000/api/users/${user._id}/update-password/`,
+        {
+          currentPassword: currentPassword,
+          newPassword: newPassword,
+        }
+      );
+      console.log(res.data);
+    } catch (error) {
+      console.log(error);
+      setErrMsg(error.response.data);
+    }
+  };
+
   return (
     <div className="settings">
       <h2>Settings</h2>
@@ -106,7 +113,7 @@ function SettingPage() {
           <form onSubmit={handleSubmitUsername}>
             {" "}
             <input
-              onChange={handleEditUsernameOnChange}
+              onChange={(e) => setUsername(e.target.value)}
               type="text"
               value={username}
             />
@@ -123,7 +130,7 @@ function SettingPage() {
         {editEmail ? (
           <>
             <input
-              onChange={handleEditEmailOnChange}
+              onChange={(e) => setEmail(e.target.value)}
               type="text"
               placeholder="Email"
               value={email}
@@ -138,13 +145,21 @@ function SettingPage() {
         )}
         <FontAwesomeIcon icon={faPen} onClick={handleShowEditEmail} />
       </form>
-      <form>
+      <form onSubmit={handdleSubmitPassword}>
         <label>
           {" "}
-          Password
-          <input type="text" placeholder="Current Password" />
-          <input type="text" placeholder="New Password" />
-        </label>
+          Password</label>
+          <input
+            onChange={(e) => setcurrentPassword(e.target.value)}
+            type="text"
+            placeholder="Current Password"
+          />
+          <input
+            onChange={(e) => setnewPassword(e.target.value)}
+            type="text"
+            placeholder="New Password"
+          />
+        <button >submit</button>
       </form>
     </div>
   );
