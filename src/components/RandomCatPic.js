@@ -1,5 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import './RandomCatPic.css';
+
 function RandomCatPic() {
   const [catImg, setCatImg] = useState(null);
 
@@ -10,7 +12,7 @@ function RandomCatPic() {
           `https://api.thecatapi.com/v1/images/search`
         );
         setCatImg(res.data);
-        console.log(res.data);
+        console.log(res.data.url);
       };
       createPost();
     } catch (error) {
@@ -19,11 +21,11 @@ function RandomCatPic() {
   }, []);
 
   return (
-    <div>
+    <div className="random-cat-pic">
       {catImg ? (
         <>
           <h1>random cat pic</h1>
-          <img src={catImg.url} alt="cat photo" />
+          <img src={catImg[0].url} alt="cat photo" />
         </>
       ) : (
         <p>loading</p>
