@@ -6,7 +6,7 @@ function NavBar() {
     <nav>
       <ul>
         <li>
-          <Link to="/home">Home</Link>
+          <Link to="/">Home</Link>
         </li>
         {/* <li>
           <Link to="/create-post">Create Post</Link>
