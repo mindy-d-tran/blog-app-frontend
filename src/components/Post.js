@@ -16,16 +16,16 @@ function Post({ post }) {
   const userCtx = useContext(UserContext);
   const { user } = userCtx;
 
-  const [singlePost, setSinglePost] = useState(post);
+  const [postState, setPostState] = useState(post);
 
   const handleOnClickLike = async () => {
     try {
       const res = await axios.put(
-        `http://localhost:4000/api/posts/${singlePost._id}/unlike`,
+        `http://localhost:4000/api/posts/${postState._id}/unlike`,
         { user_id: user._id }
       );
       // console.log(res.data);
-      setSinglePost(res.data.post);
+      setPostState(res.data.post);
     } catch (error) {
       console.log(error);
     }
@@ -33,39 +33,39 @@ function Post({ post }) {
   const handleOnClickUnlike = async () => {
     try {
       const res = await axios.put(
-        `http://localhost:4000/api/posts/${singlePost._id}/like`,
+        `http://localhost:4000/api/posts/${postState._id}/like`,
         { user_id: user._id }
       );
       // console.log(res.data);
-      setSinglePost(res.data.post);
+      setPostState(res.data.post);
     } catch (error) {
       console.log(error);
     }
   };
   return (
     <>
-      {singlePost ? (
+      {postState ? (
         <section className="post-body">
           <div className="userDisplay">
             <img className="user-post-icon" src="" alt="user icon" />
-            <p>{singlePost.user_id.username}</p>
+            <p>{postState.user_id.username}</p>
           </div>
 
           <Link to={`/post/${post._id}`}>
-            <h2>{singlePost.post_title}</h2>
-            {singlePost.post_content.img ? (
+            <h2>{postState.post_title}</h2>
+            {postState.post_content.img ? (
               <img className="post-img" src="" alt="post img" />
             ) : (
               <></>
             )}
 
-            <p className="post-content">{singlePost.post_content.text}</p>
+            <p className="post-content">{postState.post_content.text}</p>
           </Link>
 
           <p>hash tags</p>
           <section className="postbuttons">
             <span>
-              {singlePost.post_likes.find((p) => p.user_id === user._id) ? (
+              {postState.post_likes.find((p) => p.user_id === user._id) ? (
                 <FontAwesomeIcon onClick={handleOnClickLike} icon={faHeart} />
               ) : (
                 <FontAwesomeIcon
@@ -73,12 +73,12 @@ function Post({ post }) {
                   icon={fasHeart}
                 />
               )}{" "}
-              {singlePost.post_likes.length}{" "}
+              {postState.post_likes.length}{" "}
             </span>
             <Link to={`/post/${post._id}`}>
               <span>
                 <FontAwesomeIcon icon={faComment} />{" "}
-                {singlePost.post_comments.length}{" "}
+                {postState.post_comments.length}{" "}
               </span>
             </Link>
             <FontAwesomeIcon icon={faShareFromSquare} />
