@@ -72,6 +72,26 @@ function SettingPage() {
       setErrMsg(error.response.data);
     }
   };
+  
+  const handleSubmitEmail = async (e) => {
+    e.preventDefault();
+    try {
+      const res = await axios.put(
+        `http://localhost:4000/api/users/${user._id}/update-email/`,
+        {
+          email: email,
+        }
+      );
+
+      console.log(res.data);
+      setUser(res.data);
+      setEditEmail(!editEmail);
+      setErrMsg(null);
+    } catch (error) {
+      console.log(error);
+      setErrMsg(error.response.data);
+    }
+  };
 
   return (
     <div className="settings">
@@ -90,7 +110,7 @@ function SettingPage() {
               type="text"
               value={username}
             />
-            {errMsg? <p>Username is already taken</p> : <></>}
+            {errMsg ? <p>Username is already taken</p> : <></>}
             <button type="submit">submit</button>
           </form>
         ) : (
@@ -98,15 +118,21 @@ function SettingPage() {
         )}
         <FontAwesomeIcon icon={faPen} onClick={handleShowEditUsername} />
       </div>
-      <form>
+      <form onSubmit={handleSubmitEmail}>
         <label> Email </label>
         {editEmail ? (
-          <input
-            onChange={handleEditEmailOnChange}
-            type="text"
-            placeholder="Email"
-            value={email}
-          />
+          <>
+            <input
+              onChange={handleEditEmailOnChange}
+              type="text"
+              placeholder="Email"
+              value={email}
+            />
+
+            {errMsg ? <p>Email is already taken</p> : <></>}
+
+            <button type="submit">submit</button>
+          </>
         ) : (
           <p>{user.email}</p>
         )}
