@@ -13,7 +13,6 @@ import { UserContext } from "../context/UserContext";
 import { Link } from "react-router-dom";
 
 function Post({ post }) {
-
   const userCtx = useContext(UserContext);
   const { user } = userCtx;
 
@@ -63,19 +62,26 @@ function Post({ post }) {
 
             <p>hash tags</p>
             <section className="postbuttons">
-              {singlePost.post_likes.find((p) => p.user_id === user._id) ? (
-                <FontAwesomeIcon onClick={handleOnClickLike} icon={faHeart} />
-              ) : (
-                <FontAwesomeIcon
-                  onClick={handleOnClickUnlike}
-                  icon={fasHeart}
-                />
-              )}
-              <FontAwesomeIcon icon={faComment} />
+              <span>
+                {singlePost.post_likes.find((p) => p.user_id === user._id) ? (
+                  <FontAwesomeIcon onClick={handleOnClickLike} icon={faHeart} />
+                ) : (
+                  <FontAwesomeIcon
+                    onClick={handleOnClickUnlike}
+                    icon={fasHeart}
+                  />
+                )}{" "}
+                {singlePost.post_likes.length}{" "}
+              </span>
+              <Link to={`/post/${post._id}`}>
+                <span>
+                  <FontAwesomeIcon icon={faComment} />{" "}
+                  {singlePost.post_comments.length}{" "}
+                </span>
+              </Link>
               <FontAwesomeIcon icon={faShareFromSquare} />
             </section>
           </section>
-
         </div>
       ) : (
         <p>loading</p>
