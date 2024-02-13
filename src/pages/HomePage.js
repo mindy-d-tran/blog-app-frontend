@@ -1,8 +1,10 @@
-
 import PostList from "../components/PostList";
 
 import { useState, useEffect } from "react";
 import axios from "axios";
+import RandomCatPic from "../components/RandomCatPic";
+
+import './HomePage.css';
 
 function HomePage() {
   const [posts, setPosts] = useState([]);
@@ -15,7 +17,12 @@ function HomePage() {
     };
     fetchData();
   }, []);
-  return <PostList posts={posts} />;
+  return (
+    <div className="home-page-container">
+      <PostList posts={posts} />
+      <RandomCatPic />
+    </div>
+  );
 }
 
 export default HomePage;
