@@ -14,11 +14,18 @@ svg{
   color: var(--dark-color);
 }
 
-.post{
+.post-body, .post-comment{
   width: 40vw;
   margin: 1em;
   padding: 1em;
   background-color: var(--main-color);
+}
+.post-comment{
+  width: 60vw;
+}
+.post-comment >.post-body{
+  margin:0;
+  padding: 0;
 }
 .comment{
   margin: 1em 0;
