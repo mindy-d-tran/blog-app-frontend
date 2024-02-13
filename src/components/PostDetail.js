@@ -1,6 +1,9 @@
 import { useState, useEffect, useContext } from "react";
 import axios from "axios";
+
+// importing context
 import { UserContext } from "../context/UserContext";
+import { CommentContext } from "../context/CommentContext";
 
 // importing icons from font awsome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -13,11 +16,10 @@ import {
 import CommentsList from "./CommentsList";
 
 function PostDetail({ id }) {
-
   const userCtx = useContext(UserContext);
   const { user } = userCtx;
   const [post, setPost] = useState(null);
-  const [comments, setComments] =useState(null);
+  const [comments, setComments] = useState(null);
 
   useEffect(() => {
     try {
@@ -27,11 +29,13 @@ function PostDetail({ id }) {
         setPost(res.data);
       };
       fetchPosts();
-      const fetchComments = async()=>{
-        const res = await axios.get(`http://localhost:4000/api/comments/post/${id}/`);
+      const fetchComments = async () => {
+        const res = await axios.get(
+          `http://localhost:4000/api/comments/post/${id}/`
+        );
         console.log(res.data);
         setComments(res.data);
-      }
+      };
       fetchComments();
     } catch (error) {
       console.log(error);
@@ -79,21 +83,27 @@ function PostDetail({ id }) {
             <p className="post-content">{post.post_content.text}</p>
             <p>hash tags</p>
             <section className="postbuttons">
-                <span> 
-              {post.post_likes.find((p) => p.user_id === user._id) ? (
-                <FontAwesomeIcon onClick={handleOnClickLike} icon={faHeart} />
-              ) : (
-                <FontAwesomeIcon
-                  onClick={handleOnClickUnlike}
-                  icon={fasHeart}
-                />
-              )} {post.post_likes.length} </span>
-              <span><FontAwesomeIcon icon={faComment} /> {post.post_comments.length} </span>
+              <span>
+                {post.post_likes.find((p) => p.user_id === user._id) ? (
+                  <FontAwesomeIcon onClick={handleOnClickLike} icon={faHeart} />
+                ) : (
+                  <FontAwesomeIcon
+                    onClick={handleOnClickUnlike}
+                    icon={fasHeart}
+                  />
+                )}{" "}
+                {post.post_likes.length}{" "}
+              </span>
+              <span>
+                <FontAwesomeIcon icon={faComment} /> {post.post_comments.length}{" "}
+              </span>
               <FontAwesomeIcon icon={faShareFromSquare} />
             </section>
           </section>
 
-          <CommentsList comments={comments}/>
+          <CommentContext.Provider value={{ comments, setComments }}>
+            <CommentsList postID={id} />
+          </CommentContext.Provider>
         </div>
       ) : (
         <p>loading</p>
