@@ -1,4 +1,3 @@
-import Comment from "./Comment";
 // importing icons from font awsome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
@@ -77,9 +76,6 @@ function Post({ post }) {
             </section>
           </section>
 
-          <section className="comment-list">
-            <Comment />
-          </section>
         </div>
       ) : (
         <p>loading</p>
