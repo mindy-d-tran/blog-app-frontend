@@ -10,7 +10,6 @@ import { UserContext } from "./context/UserContext";
 
 // importing pages
 import MainPage from "./pages/MainPage";
-import HomePage from "./pages/HomePage";
 import SettingPage from "./pages/SettingPage";
 
 //importing components
