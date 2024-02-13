@@ -2,8 +2,6 @@ import { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import { UserContext } from "../context/UserContext";
 
-//components
-import Comment from "./Comment";
 
 // importing icons from font awsome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -13,21 +11,29 @@ import {
   faComment,
   faShareFromSquare,
 } from "@fortawesome/free-regular-svg-icons";
+import CommentsList from "./CommentsList";
 
 function PostDetail({ id }) {
 
   const userCtx = useContext(UserContext);
   const { user } = userCtx;
   const [post, setPost] = useState(null);
+  const [comments, setComments] =useState(null);
 
   useEffect(() => {
     try {
-      const fetchData = async () => {
+      const fetchPosts = async () => {
         const res = await axios.get(`http://localhost:4000/api/posts/${id}/`);
         console.log(res.data);
         setPost(res.data);
       };
-      fetchData();
+      fetchPosts();
+      const fetchComments = async()=>{
+        const res = await axios.get(`http://localhost:4000/api/comments/post/${id}/`);
+        console.log(res.data);
+        setComments(res.data);
+      }
+      fetchComments();
     } catch (error) {
       console.log(error);
     }
@@ -87,9 +93,7 @@ function PostDetail({ id }) {
             </section>
           </section>
 
-          <section className="comment-list">
-            <Comment />
-          </section>
+          <CommentsList comments={comments}/>
         </div>
       ) : (
         <p>loading</p>
