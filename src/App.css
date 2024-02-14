@@ -59,6 +59,7 @@ svg {
   background-color: var(--dark-color);
 }
 input, textarea{
+  padding: 0.25em;
   outline-color: var(--dark-color);
   border-color: var(--main-color);
   border-style: solid;
