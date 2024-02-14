@@ -8,18 +8,16 @@ function NavBar() {
         <li>
           <Link to="/">Home</Link>
         </li>
-        {/* <li>
-          <Link to="/create-post">Create Post</Link>
-        </li> */}
+
         <li>
           <Link to="/setting">Setting</Link>
         </li>
-        <li>
+        {/* <li>
           <form>
             <input type="text" placeholder="Search" />
             <button>search</button>
           </form>
-        </li>
+        </li> */}
       </ul>
     </nav>
   );
