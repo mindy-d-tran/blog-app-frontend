@@ -12,9 +12,6 @@ import TempProfilePic from "../assets/cat_logo_transparent.png";
 // importing style
 import "./SettingPage.css";
 
-// const API_KEY ="live_q6c3JrM10gOEfZinLjnSxMkjOdqR1bToljv8rziaj3d2JoXRsFRvb1AaEUzKKVQ2";
-// const url = `https://api.thecatapi.com/v1/images/search?limit=10&breed_ids=beng&api_key=${API_KEY}`;
-
 function SettingPage() {
   const userCtx = useContext(UserContext);
   const { user, setUser } = userCtx;
