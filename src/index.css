@@ -9,6 +9,7 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  scrollbar-color: var(--main-color) var(--cream);
 }
 body {
   margin: 0;
@@ -19,6 +20,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--cream);
   color: var(--text-color);
+  
 }
 
 code {
