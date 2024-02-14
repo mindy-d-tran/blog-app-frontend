@@ -45,7 +45,7 @@ function Comment({ comment }) {
 
   return (
     <div className="comment">
-      <div className="userDisplay">
+      <div className="userDisplay-small">
         <img className="user-comment-icon" src={ProfilePic} alt="user icon" />
         <p>{commentState.user_id.username}</p>
       </div>

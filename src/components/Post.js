@@ -47,7 +47,7 @@ function Post({ post }) {
     <>
       {postState ? (
         <section className="post-body">
-          <div className="userDisplay">
+          <div className="userDisplay-small">
             <img className="user-post-icon" src={ProfilePic} alt="user icon" />
             <p>{postState.user_id.username}</p>
           </div>
