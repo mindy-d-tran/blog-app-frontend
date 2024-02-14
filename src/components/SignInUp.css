@@ -1,7 +1,7 @@
 .sign-in-up-form{
   margin-bottom: 0.75em;
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   padding: 1em;
   background-color: var(--accent-color);
   border-radius: 1em;
@@ -18,6 +18,9 @@
   margin: 0.5em 0;
   background-color: var(--main-color);
   color: var(--text-color);
+}
+label[class=klee-one-semibold]{
+  border-bottom: 2px solid var(--main-color);
 }
 .link{
   color: var(--dark-color);
