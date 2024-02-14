@@ -16,13 +16,13 @@ function NewCommentForm({ postID }) {
     e.preventDefault();
     try {
       console.log(newComment);
-      const res = await axios.post(`https://blog-app-0no1.onrender.com/api/comments`, {
+      const res = await axios.post(`http://localhost:4000/api/comments`, {
         user_id: user._id,
         post_id: postID,
         comment_content: newComment,
       });
       console.log(res.data);
-      const resComments = await axios.get(`https://blog-app-0no1.onrender.com/api/comments/post/${postID}`);
+      const resComments = await axios.get(`http://localhost:4000/api/comments/post/${postID}`);
       setComments(resComments.data);
     } catch (error) {
       console.log(error);

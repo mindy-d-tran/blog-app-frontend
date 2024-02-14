@@ -15,14 +15,14 @@ function PostDetail({ id }) {
   useEffect(() => {
     try {
       const fetchPosts = async () => {
-        const res = await axios.get(`https://blog-app-0no1.onrender.com/api/posts/${id}/`);
+        const res = await axios.get(`http://localhost:4000/api/posts/${id}/`);
         console.log(res.data);
         setPost(res.data);
       };
       fetchPosts();
       const fetchComments = async () => {
         const res = await axios.get(
-          `https://blog-app-0no1.onrender.com/api/comments/post/${id}/`
+          `http://localhost:4000/api/comments/post/${id}/`
         );
         console.log(res.data);
         setComments(res.data);
