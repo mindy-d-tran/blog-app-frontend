@@ -1,32 +1,40 @@
-.settings{
-    width: 75vw;
-    padding: 2em;
-    margin: 1em;
-    border-radius: 2em;
-    /* border: 5px solid var(--main-color); */
-    background-color: var(--accent-color);
+.settings {
+  width: 75vw;
+  margin: 3.5em 0;
+  padding: 1em;
+  background-color: var(--cream);
+  border: 5px solid var(--main-color);
+  border-top: 2.5em solid var(--main-color);
+  border-radius: 2em;
+  overflow: hidden;
+  box-shadow: #e9d6d2 3px -3px 10px 2px;
 }
+
+.settings form {
+  /* margin: 1em; */
+  display: flex;
+  flex-direction: column;
+}
+/* .settings p */
 .userDisplay {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: var(--main-color);
+  display: flex;
+  align-items: center;
+}
+.userDisplay svg{
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: 1em;
+}
+#edit-username {
+  flex-direction: row;
+}
+.userDisplay img {
+  width: 100px;
+  height: 100px;
+  margin-right: 1em;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid var(--main-color);
+  background-color: var(--dark-color);
+}
 
-}
-.userDisplay img{
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 5px solid var(--cream);
-    background-color: var(--dark-color);
-}
-
-.settings form{
-    margin: 1em;
-    display: flex;
-    flex-direction: column;
-}
-/* .settings input {
-    display: block;
-} */

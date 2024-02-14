@@ -107,7 +107,7 @@ function SettingPage() {
           alt="profile pic"
         />
         {editUsername ? (
-          <form onSubmit={handleSubmitUsername}>
+          <form id="edit-username" onSubmit={handleSubmitUsername}>
             {" "}
             <input
               onChange={(e) => setUsername(e.target.value)}
@@ -123,7 +123,7 @@ function SettingPage() {
         <FontAwesomeIcon icon={faPen} onClick={handleShowEditUsername} />
       </div>
       <form onSubmit={handleSubmitEmail}>
-        <label> Email </label>
+        <label className="klee-one-semibold"> Email </label>
         {editEmail ? (
           <>
             <input
@@ -143,7 +143,7 @@ function SettingPage() {
         <FontAwesomeIcon icon={faPen} onClick={handleShowEditEmail} />
       </form>
       <form onSubmit={handdleSubmitPassword}>
-        <label>
+        <label className="klee-one-semibold">
           {" "}
           Password</label>
           <input
