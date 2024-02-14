@@ -1,10 +1,12 @@
 import PostList from "../components/PostList";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import RandomCatPic from "../components/RandomCatPic";
 
-import './HomePage.css';
+import { PostsContext } from "../context/PostsContext";
+
+import "./HomePage.css";
 
 function HomePage() {
   const [posts, setPosts] = useState([]);
@@ -19,7 +21,9 @@ function HomePage() {
   }, []);
   return (
     <div className="home-page-container">
-      <PostList posts={posts} />
+      <PostsContext.Provider value={{posts, setPosts}}>
+        <PostList posts={posts} />
+      </PostsContext.Provider>
       <RandomCatPic />
     </div>
   );
