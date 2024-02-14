@@ -1,3 +1,7 @@
 .home-page-container{
+    margin-top: 2em;
+    padding-top: 1em;
     display: flex;
+    background-color: var(--accent-color);
+    border: 5px solid var(--main-color);
 }
