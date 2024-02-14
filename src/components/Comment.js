@@ -8,6 +8,8 @@ import {
   faHeart as fasHeart,
   faShareFromSquare,
 } from "@fortawesome/free-regular-svg-icons";
+// importing temp profile icons
+import ProfilePic from "../assets/cat_logo_transparent.png";
 
 function Comment({ comment }) {
   const userCtx = useContext(UserContext);
@@ -43,8 +45,10 @@ function Comment({ comment }) {
 
   return (
     <div className="comment">
-      <img className="user-comment-icon" src="" alt="user icon" />
-      <p>{commentState.user_id.username}</p>
+      <div className="userDisplay">
+        <img className="user-comment-icon" src={ProfilePic} alt="user icon" />
+        <p>{commentState.user_id.username}</p>
+      </div>
       <p>{commentState.comment_content}</p>
       <section className="postbuttons">
         <span>
