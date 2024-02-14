@@ -15,16 +15,12 @@ import ProfilePic from "../assets/cat_logo_transparent.png";
 
 import axios from "axios";
 import { UserContext } from "../context/UserContext";
-import { PostsContext } from "../context/PostsContext";
 
 import { Link } from "react-router-dom";
 
 function Post({ post }) {
   const userCtx = useContext(UserContext);
   const { user } = userCtx;
-
-  const postsCtx = useContext(PostsContext);
-  const { setPosts } = postsCtx;
 
   // need this to make the like or unlike button change icon
   const [postState, setPostState] = useState(post);
@@ -53,20 +49,7 @@ function Post({ post }) {
       console.log(error);
     }
   };
-  const handleOnClickDelete = async () => {
-    try {
-      const res = await axios.delete(
-        `https://blog-app-0no1.onrender.com/api/posts/${postState._id}/`
-      );
-      const resPosts = await axios.get(
-        `https://blog-app-0no1.onrender.com/api/posts`
-      );
-      // console.log(res.data);
-      setPosts(resPosts.data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+
   return (
     <>
       {postState ? (
@@ -74,13 +57,6 @@ function Post({ post }) {
           <div className="userDisplay-small">
             <img className="user-post-icon" src={ProfilePic} alt="user icon" />
             <p>{postState.user_id.username}</p>
-            {postState.user_id._id === user._id && (
-              <FontAwesomeIcon
-                onClick={handleOnClickDelete}
-                icon={faTrash}
-                size="sm"
-              />
-            )}
           </div>
 
           <Link to={`/post/${post._id}`}>
