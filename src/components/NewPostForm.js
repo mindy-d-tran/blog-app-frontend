@@ -5,6 +5,8 @@ import { UserContext } from "../context/UserContext";
 import { PostsContext } from "../context/PostsContext";
 import ProfilePic from "../assets/cat_logo_transparent.png";
 
+import './NewPostForm.css';
+
 function NewPostForm() {
   const userCtx = useContext(UserContext);
   const { user } = userCtx;
@@ -44,14 +46,15 @@ function NewPostForm() {
             setNewPostTitle(e.target.value);
           }}
           type="text"
+          id="new-post-title"
           value={newPostTitle}
           placeholder="Title"
         />
-        <input
+        <textarea
           onChange={(e) => {
             setNewPostContent(e.target.value);
           }}
-          type="text"
+          id="new-post-content"
           value={newPostContent}
           placeholder="Text"
         />
