@@ -1,14 +1,13 @@
 .random-cat-pic {
   width: 30vw;
   height: fit-content;
-
   padding: 1em;
   background-color: var(--cream);
-
+  border-bottom: 5px solid var(--main-color);
 }
-.random-cat-pic img{
-    width: 100%;
-    height: 75%;
-    object-fit: contain;
-    background-color: var(--cream);
+.random-cat-pic img {
+  width: 100%;
+  height: 75%;
+  object-fit: contain;
+  background-color: var(--cream);
 }
