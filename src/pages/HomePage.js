@@ -13,7 +13,7 @@ function HomePage() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const res = await axios.get("http://localhost:4000/api/posts");
+      const res = await axios.get("https://blog-app-0no1.onrender.com/api/posts");
       setPosts(res.data);
       // console.log(res.data);
     };
