@@ -14,11 +14,15 @@ svg{
   color: var(--dark-color);
 }
 
-.post-body, .post-comment{
-  width: 40vw;
+.post-list{
   margin: 1em;
   padding: 1em;
   background-color: var(--main-color);
+}
+.post-body, .post-comment{
+  width: 40vw;
+  margin: 2em 0;
+  background-color: var(--accent-color);
 }
 .post-comment{
   width: 60vw;
@@ -45,4 +49,7 @@ svg{
   border-radius: 50%;
   border: 5px solid var(--cream);
   background-color: var(--dark-color);
+}
+.create-post-container{
+  display: flex;
 }
