@@ -9,16 +9,21 @@
   overflow: hidden;
   box-shadow: #e9d6d2 3px -3px 10px 2px;
 }
-
+.settings h2{
+  font-size: 30px;
+}
 .settings form {
   /* margin: 1em; */
   display: flex;
   flex-direction: column;
 }
-/* .settings p */
+
 .userDisplay {
   display: flex;
   align-items: center;
+}
+.userDisplay p{
+  font-size: 30px;
 }
 .settings svg {
   cursor: pointer;
@@ -28,9 +33,9 @@
 #edit-username {
   flex-direction: row;
 }
-#edit-username button{
-    margin-top: 0.25em;
-    margin-left: 0.5em;
+#edit-username button {
+  margin-top: 0.25em;
+  margin-left: 0.5em;
 }
 .userDisplay img {
   width: 100px;
@@ -46,12 +51,17 @@
   border-bottom: 2px solid var(--main-color);
   margin-top: 1em;
   margin-bottom: 0.5em;
+  font-size: 22px;
+}
+
+.settings form:last-child label {
+  align-self: flex-start;
 }
 .settings input {
   margin: 0.25em 0;
 }
-.settings button{
-    margin-top: 0.5em;
+.settings button {
+  margin-top: 0.5em;
 }
 
 .edit-email {
