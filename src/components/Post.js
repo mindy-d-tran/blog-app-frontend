@@ -3,7 +3,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faHeart,
   faChartSimple,
-  faTrash,
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faHeart as fasHeart,
