@@ -1,6 +1,6 @@
 // importing icons from font awsome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHeart } from "@fortawesome/free-solid-svg-icons";
+import { faHeart, faChartSimple } from "@fortawesome/free-solid-svg-icons";
 import {
   faHeart as fasHeart,
   faComment,
@@ -86,6 +86,9 @@ function Post({ post }) {
                 {postState.post_comments.length}{" "}
               </span>
             </Link>
+            <span>
+              <FontAwesomeIcon icon={faChartSimple} /> {post.post_views}{" "}
+            </span>
             <FontAwesomeIcon icon={faShareFromSquare} />
           </section>
         </section>
