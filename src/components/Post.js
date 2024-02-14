@@ -56,8 +56,8 @@ function Post({ post }) {
             <h2>{postState.post_title}</h2>
             <section className="post-img-gallery">
               {postState.post_content.img.length > 0 ? (
-                postState.post_content.img.map((i) => (
-                  <img className="post-img" src={i} alt="post img" />
+                postState.post_content.img.map((img,i) => (
+                  <img key={i} className="post-img" src={img} alt="post img" />
                 ))
               ) : (
                 <></>
