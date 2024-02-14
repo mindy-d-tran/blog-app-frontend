@@ -24,8 +24,8 @@ function RandomCatPic() {
     <div className="random-cat-pic">
       {catImg ? (
         <>
-          <h1>random cat pic</h1>
           <img src={catImg[0].url} alt="cat photo" />
+          <h1>random cat pic</h1>
         </>
       ) : (
         <p>loading</p>
