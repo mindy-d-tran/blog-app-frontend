@@ -13,11 +13,7 @@
   padding: 0.25em 1em;
   align-self: end;
 }
-#new-post-content, #new-post-title{
-  outline-color: var(--dark-color);
-  border-color: var(--main-color);
-  border-style: solid;
-}
+
 #new-post-content {
   height: 75px;
   padding: 0.25em;
