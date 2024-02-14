@@ -22,19 +22,17 @@ svg {
   border-right: 5px solid var(--main-color);
 
 }
-.post-body,
-.post-comment {
-  /* width: 40vw; */
-  margin: 2em 0;
-  background-color: var(--cream);
-}
 .post-body{
-  margin-bottom: 1em;
+  margin: 1em 0;
   padding: 1em 0;
+  background-color: var(--cream);
+
   border-bottom: 2px solid var(--main-color);
 }
 .post-comment {
   width: 60vw;
+  margin: 2em 0;
+  background-color: var(--cream);
 }
 .post-comment > .post-body {
   margin: 0;
@@ -49,7 +47,7 @@ svg {
 }
 .userDisplay-small {
   display: flex;
-  align-items: center;
+  align-items: start;
 }
 .userDisplay-small img {
   width: 50px;
@@ -60,6 +58,4 @@ svg {
   border: 4px solid var(--main-color);
   background-color: var(--dark-color);
 }
-.create-post-container {
-  display: flex;
-}
+
