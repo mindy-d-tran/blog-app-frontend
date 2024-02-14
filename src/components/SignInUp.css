@@ -1,7 +1,7 @@
 .sign-in-up-form{
   margin-bottom: 0.75em;
   display: flex;
-  /* flex-direction: column; */
+  flex-direction: column;
   padding: 1em;
   background-color: var(--accent-color);
   border-radius: 1em;
