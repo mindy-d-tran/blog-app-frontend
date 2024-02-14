@@ -1,15 +1,19 @@
 # Blog App Front End
+
 ## About
+
 A blog application where users can post, comment, and like each other's post.
 
-## backend repository
+## Backend repository
+
 [backend repository link](https://github.com/mindy-d-tran/blog-app-backend)
 
 ## Live Demo
+
 Deployed on netlify: [blog app live demo](https://main--ps-blog-app.netlify.app/)
 
 ## Technology Used
-### Frontend
+
 - JavaScript
 - CSS
 - Font Awsome (icons)
@@ -19,40 +23,38 @@ Deployed on netlify: [blog app live demo](https://main--ps-blog-app.netlify.app/
 - Axios (fetching data)
 - Node.js
 
-### Backend
-- Express
-- Mongoose
-- MongoDB
-- Bcrypt (Password encrypting, hashing)
-
-## Planning 
+## Planning
 
 ### Trello Board
+
 [trello board link](https://trello.com/invite/b/xMjVRQSG/ATTI0edbb0da239b30e52dd61d33368ae80f69D00CD7/ps-capstone-project)
 
 ### Wireframes
+
 [figma link](https://www.figma.com/file/JXbIHYB3GCcf4CvyO5OFxR/Mindy-Tran-Blog-App-wireframe?type=design&node-id=0%3A1&mode=design&t=dvxGh0beVw3jv3FA-1)
 
 #### Color Scheme
+
 ![color scheme](./color%20scheme.png)
 
 #### Launch Page
+
 ![launch Page](./launch_page.png)
 
 #### Home Page
+
 ![home page](./Home%20Page.png)
 
 #### Individual Post Page
+
 ![individual post page](./one_post.png)
 
 #### Settings Page
+
 ![setting page](./Settings.png)
 
-## Entity Relationship Diagram (ERD) 
-[ERD](https://drive.google.com/file/d/14j2IKmw6vyK-PiW4wrSRmKZa3s_J_noH/view)
-![erd](./erd.png)
-
 # Future Implementations
+
 - Allow user to edit and delete post
 - Allow user to edit and delete comments
 - Allow useres to delete account
