@@ -17,7 +17,7 @@ function SettingPage() {
   const { user, setUser } = userCtx;
 
   // states to edit account fields
-  const [editProfilePic, setEditProfilePic] = useState(false);
+  // const [editProfilePic, setEditProfilePic] = useState(false);
   const [editUsername, setEditUsername] = useState(false);
   const [editEmail, setEditEmail] = useState(false);
 
@@ -30,9 +30,9 @@ function SettingPage() {
   const [newPassword, setnewPassword] = useState("");
 
   // functions to display edit account fields forms
-  const handleShowEditProfilePic = () => {
-    setEditProfilePic(!editProfilePic);
-  };
+  // const handleShowEditProfilePic = () => {
+  //   setEditProfilePic(!editProfilePic);
+  // };
   const handleShowEditUsername = () => {
     setEditUsername(!editUsername);
   };
@@ -102,7 +102,7 @@ function SettingPage() {
       <h2>Settings</h2>
       <div className="userDisplay">
         <img
-          onClick={handleShowEditProfilePic}
+          // onClick={handleShowEditProfilePic}
           src={TempProfilePic}
           alt="profile pic"
         />
@@ -123,7 +123,13 @@ function SettingPage() {
         <FontAwesomeIcon icon={faPen} onClick={handleShowEditUsername} />
       </div>
       <form onSubmit={handleSubmitEmail}>
-        <label className="klee-one-semibold"> Email </label>
+        <div className="edit-email">
+          <label className="klee-one-semibold">
+            {" "}
+            Email 
+          </label>
+          <FontAwesomeIcon icon={faPen} onClick={handleShowEditEmail} />
+        </div>
         {editEmail ? (
           <>
             <input
@@ -140,23 +146,21 @@ function SettingPage() {
         ) : (
           <p>{user.email}</p>
         )}
-        <FontAwesomeIcon icon={faPen} onClick={handleShowEditEmail} />
       </form>
+
       <form onSubmit={handdleSubmitPassword}>
-        <label className="klee-one-semibold">
-          {" "}
-          Password</label>
-          <input
-            onChange={(e) => setcurrentPassword(e.target.value)}
-            type="text"
-            placeholder="Current Password"
-          />
-          <input
-            onChange={(e) => setnewPassword(e.target.value)}
-            type="text"
-            placeholder="New Password"
-          />
-        <button >submit</button>
+        <label className="klee-one-semibold"> Password</label>
+        <input
+          onChange={(e) => setcurrentPassword(e.target.value)}
+          type="text"
+          placeholder="Current Password"
+        />
+        <input
+          onChange={(e) => setnewPassword(e.target.value)}
+          type="text"
+          placeholder="New Password"
+        />
+        <button>submit</button>
       </form>
     </div>
   );

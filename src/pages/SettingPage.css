@@ -20,13 +20,17 @@
   display: flex;
   align-items: center;
 }
-.userDisplay svg{
-    cursor: pointer;
-    margin-left: auto;
-    margin-right: 1em;
+.settings svg {
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: 1em;
 }
 #edit-username {
   flex-direction: row;
+}
+#edit-username button{
+    margin-top: 0.25em;
+    margin-left: 0.5em;
 }
 .userDisplay img {
   width: 100px;
@@ -38,3 +42,18 @@
   background-color: var(--dark-color);
 }
 
+.settings label {
+  border-bottom: 2px solid var(--main-color);
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+}
+.settings input {
+  margin: 0.25em 0;
+}
+.settings button{
+    margin-top: 0.5em;
+}
+
+.edit-email {
+  display: flex;
+}
