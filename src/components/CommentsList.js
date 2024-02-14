@@ -7,15 +7,18 @@ import NewCommentForm from "./NewCommentForm";
 // importing context
 import { CommentContext } from "../context/CommentContext";
 
-function CommentsList({  postID }) {
+function CommentsList({ postID }) {
   const commentsCtx = useContext(CommentContext);
-  const {comments} = commentsCtx;
+  const { comments } = commentsCtx;
+
   return (
     <section className="comment-list">
-      <NewCommentForm postID={postID}/>
-      {comments.map((c) => (
-        <Comment key={c._id} comment={c} postID={postID}/>
-      ))}
+      <NewCommentForm postID={postID} />
+      {comments ? (
+        comments.map((c) => <Comment key={c._id} comment={c} postID={postID} />)
+      ) : (
+        <p>loading</p>
+      )}
     </section>
   );
 }
