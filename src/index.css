@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&family=Klee+One:wght@400;600&display=swap");
+
 :root {
   --cream: #fff9ef;
   --main-color: #f8bdbd;
@@ -20,7 +22,18 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--cream);
   color: var(--text-color);
-  
+}
+
+.klee-one-regular {
+  font-family: "Klee One", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.klee-one-semibold {
+  font-family: "Klee One", cursive;
+  font-weight: 600;
+  font-style: normal;
 }
 
 code {
