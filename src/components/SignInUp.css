@@ -19,9 +19,6 @@
   background-color: var(--main-color);
   color: var(--text-color);
 }
-label[class=klee-one-semibold]{
-  border-bottom: 2px solid var(--main-color);
-}
 .link{
   color: var(--dark-color);
   border-bottom: 1px solid var(--dark-color);
