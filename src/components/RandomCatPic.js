@@ -12,7 +12,7 @@ function RandomCatPic() {
           `https://api.thecatapi.com/v1/images/search`
         );
         setCatImg(res.data);
-        console.log(res.data.url);
+        // console.log(res.data.url);
       };
       createPost();
     } catch (error) {
