@@ -17,6 +17,7 @@ function Post({ post }) {
   const userCtx = useContext(UserContext);
   const { user } = userCtx;
 
+  // need this to make the like or unlike button change icon
   const [postState, setPostState] = useState(post);
 
   const handleOnClickLike = async () => {
