@@ -1,9 +1,10 @@
 .home-page-container{
-    margin-top: 3.5em;
+    margin: 3.5em 0;
     display: flex;
     background-color: var(--accent-color);
     border: 5px solid var(--main-color);
     border-top: 2.5em solid var(--main-color);
     border-radius: 2em;
     overflow: hidden;
+    box-shadow: #e9d6d2 3px -3px 10px 2px;
 }
