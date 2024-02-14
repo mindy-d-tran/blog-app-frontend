@@ -38,7 +38,7 @@ function NewPostForm() {
       <div className="userDisplay-small">
         <img className="user-post-icon" src={ProfilePic} alt="user icon" />
       </div>
-      <form onSubmit={handleOnSubmit}>
+      <form className="new-post-form" onSubmit={handleOnSubmit}>
         <input
           onChange={(e) => {
             setNewPostTitle(e.target.value);
