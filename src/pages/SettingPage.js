@@ -48,7 +48,7 @@ function SettingPage() {
     e.preventDefault();
     try {
       const res = await axios.put(
-        `http://localhost:4000/api/users/${user._id}/update-username/`,
+        `https://blog-app-0no1.onrender.comapi/users/${user._id}/update-username/`,
         {
           username: username,
         }
@@ -67,7 +67,7 @@ function SettingPage() {
     e.preventDefault();
     try {
       const res = await axios.put(
-        `http://localhost:4000/api/users/${user._id}/update-email/`,
+        `https://blog-app-0no1.onrender.comapi/users/${user._id}/update-email/`,
         {
           email: email,
         }
@@ -87,7 +87,7 @@ function SettingPage() {
     e.preventDefault();
     try {
       const res = await axios.put(
-        `http://localhost:4000/api/users/${user._id}/update-password/`,
+        `https://blog-app-0no1.onrender.comapi/users/${user._id}/update-password/`,
         {
           currentPassword: currentPassword,
           newPassword: newPassword,
