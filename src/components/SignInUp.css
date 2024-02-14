@@ -1,6 +1,26 @@
 .sign-in-up-form{
+  margin-bottom: 0.75em;
   display: flex;
   flex-direction: column;
-  padding: 10px;
+  padding: 1em;
+  background-color: var(--accent-color);
+  border-radius: 1em;
+}
+.sign-in-up-form input{
+  padding: 0.25em;
+  margin: 0.25em 0 0.5em ;
+}
+.sign-in-up-form h3{
+  font-weight: 600;
+  font-size: 23px;
+}
+.sign-in-up-form button {
+  margin: 0.5em 0;
   background-color: var(--main-color);
+  color: var(--text-color);
+}
+.link{
+  color: var(--dark-color);
+  border-bottom: 1px solid var(--dark-color);
+  cursor: pointer;
 }

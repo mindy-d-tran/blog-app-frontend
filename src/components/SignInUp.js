@@ -73,7 +73,7 @@ function SignInUp(props) {
         // signup form
         <div>
           <form className="sign-in-up-form" onSubmit={handleSignUp}>
-            <h3>Sign Up</h3>
+            <h3 className="klee-one-regular" >Sign Up</h3>
             <label htmlFor="email">Email</label>
             <input
               ref={emailInputRef}
@@ -118,16 +118,16 @@ function SignInUp(props) {
           </form>
           <span>
             Already have an account?{" "}
-            <button onClick={() => setCreateAccount(!createAccount)}>
+            <span className="link" onClick={() => setCreateAccount(!createAccount)}>
               Sign In
-            </button>
+            </span>
           </span>
         </div>
       ) : (
         // sign in form
         <div>
           <form className="sign-in-up-form" onSubmit={handleSignIn}>
-            <h3>Sign In</h3>
+            <h3 className="klee-one-regular">Sign In</h3>
 
             <label htmlFor="emailOrUsername">Email or Username</label>
             <input
@@ -156,9 +156,9 @@ function SignInUp(props) {
           </form>
           <span>
             Don't have an account?{" "}
-            <button onClick={() => setCreateAccount(!createAccount)}>
+            <span className="link" onClick={() => setCreateAccount(!createAccount)}>
               Sign Up
-            </button>
+            </span>
           </span>
         </div>
       )}
