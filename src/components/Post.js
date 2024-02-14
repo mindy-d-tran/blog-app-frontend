@@ -11,6 +11,7 @@ import axios from "axios";
 import { UserContext } from "../context/UserContext";
 
 import { Link } from "react-router-dom";
+import ProfilePic from "../assets/cat_logo_transparent.png";
 
 function Post({ post }) {
   const userCtx = useContext(UserContext);
@@ -47,17 +48,21 @@ function Post({ post }) {
       {postState ? (
         <section className="post-body">
           <div className="userDisplay">
-            <img className="user-post-icon" src="" alt="user icon" />
+            <img className="user-post-icon" src={ProfilePic} alt="user icon" />
             <p>{postState.user_id.username}</p>
           </div>
 
           <Link to={`/post/${post._id}`}>
             <h2>{postState.post_title}</h2>
-            {postState.post_content.img ? (
-              <img className="post-img" src="" alt="post img" />
-            ) : (
-              <></>
-            )}
+            <section className="post-img-gallery">
+              {postState.post_content.img.length > 0 ? (
+                postState.post_content.img.map((i) => (
+                  <img className="post-img" src={i} alt="post img" />
+                ))
+              ) : (
+                <></>
+              )}
+            </section>
 
             <p className="post-content">{postState.post_content.text}</p>
           </Link>
