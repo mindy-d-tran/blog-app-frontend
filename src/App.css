@@ -47,7 +47,7 @@ svg {
 }
 .userDisplay-small {
   display: flex;
-  align-items: start;
+  align-items: flex-start;
 }
 .userDisplay-small img {
   width: 50px;
@@ -58,7 +58,7 @@ svg {
   border: 4px solid var(--main-color);
   background-color: var(--dark-color);
 }
-input[type=text], textarea{
+input, textarea{
   outline-color: var(--dark-color);
   border-color: var(--main-color);
   border-style: solid;
