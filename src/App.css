@@ -34,3 +34,16 @@ svg{
   margin: 1em 0;
   background-color: var(--accent-color);
 }
+.userDisplay-small {
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+}
+.userDisplay-small img{
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid var(--cream);
+  background-color: var(--dark-color);
+}
