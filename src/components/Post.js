@@ -22,7 +22,7 @@ function Post({ post }) {
   const handleOnClickLike = async () => {
     try {
       const res = await axios.put(
-        `http://localhost:4000/api/posts/${postState._id}/unlike`,
+        `https://blog-app-0no1.onrender.com/api/posts/${postState._id}/unlike`,
         { user_id: user._id }
       );
       // console.log(res.data);
@@ -34,7 +34,7 @@ function Post({ post }) {
   const handleOnClickUnlike = async () => {
     try {
       const res = await axios.put(
-        `http://localhost:4000/api/posts/${postState._id}/like`,
+        `https://blog-app-0no1.onrender.com/api/posts/${postState._id}/like`,
         { user_id: user._id }
       );
       // console.log(res.data);

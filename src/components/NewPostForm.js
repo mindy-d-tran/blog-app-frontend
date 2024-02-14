@@ -18,7 +18,7 @@ function NewPostForm() {
   const handleOnSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post(`http://localhost:4000/api/posts`, {
+      const res = await axios.post(`https://blog-app-0no1.onrender.com/api/posts`, {
         user_id: user._id,
         post_content: {
           text: newPostContent,
@@ -26,7 +26,7 @@ function NewPostForm() {
         post_title: newPostTitle,
       });
       console.log(res.data);
-      const resPosts = await axios.get(`http://localhost:4000/api/posts`);
+      const resPosts = await axios.get(`https://blog-app-0no1.onrender.com/api/posts`);
       setPosts(resPosts.data);
     } catch (error) {
       console.log(error);

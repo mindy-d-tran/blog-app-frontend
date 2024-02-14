@@ -12,9 +12,6 @@ import TempProfilePic from "../assets/cat_logo_transparent.png";
 // importing style
 import "./SettingPage.css";
 
-// const API_KEY ="live_q6c3JrM10gOEfZinLjnSxMkjOdqR1bToljv8rziaj3d2JoXRsFRvb1AaEUzKKVQ2";
-// const url = `https://api.thecatapi.com/v1/images/search?limit=10&breed_ids=beng&api_key=${API_KEY}`;
-
 function SettingPage() {
   const userCtx = useContext(UserContext);
   const { user, setUser } = userCtx;
@@ -48,7 +45,7 @@ function SettingPage() {
     e.preventDefault();
     try {
       const res = await axios.put(
-        `http://localhost:4000/api/users/${user._id}/update-username/`,
+        `https://blog-app-0no1.onrender.com/api/users/${user._id}/update-username/`,
         {
           username: username,
         }
@@ -67,7 +64,7 @@ function SettingPage() {
     e.preventDefault();
     try {
       const res = await axios.put(
-        `http://localhost:4000/api/users/${user._id}/update-email/`,
+        `https://blog-app-0no1.onrender.com/api/users/${user._id}/update-email/`,
         {
           email: email,
         }
@@ -87,7 +84,7 @@ function SettingPage() {
     e.preventDefault();
     try {
       const res = await axios.put(
-        `http://localhost:4000/api/users/${user._id}/update-password/`,
+        `https://blog-app-0no1.onrender.com/api/users/${user._id}/update-password/`,
         {
           currentPassword: currentPassword,
           newPassword: newPassword,

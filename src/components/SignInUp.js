@@ -35,7 +35,7 @@ function SignInUp(props) {
     e.preventDefault();
 
     try {
-      const res = await axios.post("http://localhost:4000/api/users", {
+      const res = await axios.post("https://blog-app-0no1.onrender.com/api/users", {
         email: emailInputRef.current.value,
         username: usernameInputRef.current.value,
         password: passwordInputRef.current.value,
@@ -53,7 +53,7 @@ function SignInUp(props) {
   const handleSignIn = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.put("http://localhost:4000/api/users/login", {
+      const res = await axios.put("https://blog-app-0no1.onrender.com/api/users/login", {
         emailOrUsername: emailOrUsernameInputRef.current.value,
         password: passwordSIInputRef.current.value,
       });
