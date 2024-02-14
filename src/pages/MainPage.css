@@ -1,7 +1,7 @@
 .launch-page{
     display: flex;
     height: 90vh;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
 }
 .logo-big{
@@ -9,7 +9,13 @@
 }
 
 .hero-area{
+    margin-right: 4cm;
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.hero-area h1 {
+    color: var(--main-color);
+    font-size: 45px;
 }

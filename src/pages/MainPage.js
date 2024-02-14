@@ -22,7 +22,7 @@ function MainPage() {
           <div className="launch-page">
             <div className="hero-area">
               <img className="logo-big" src={Logo} alt="logo big" />
-              <h1>Blog App</h1>
+              <h1 className="klee-one-semibold">Blog App</h1>
             </div>
             <SignInUp />
           </div>
