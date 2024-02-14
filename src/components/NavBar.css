@@ -9,6 +9,7 @@ a {
 /*start of nav style*/
 nav > ul {
   display: flex;
+  justify-content: center;
   align-items: center;
   background-color: var(--main-color);
   list-style-type: none;
