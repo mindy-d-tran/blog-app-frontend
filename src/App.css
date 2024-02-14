@@ -36,7 +36,6 @@ svg{
 }
 .userDisplay-small {
   display: flex;
-  /* justify-content: space-between; */
   align-items: center;
 }
 .userDisplay-small img{
