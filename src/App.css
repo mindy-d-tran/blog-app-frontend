@@ -27,6 +27,9 @@ svg{
   margin:0;
   padding: 0;
 }
+.post-img-gallery img{
+  width: 100%;
+}
 .comment{
   margin: 1em 0;
   background-color: var(--accent-color);
