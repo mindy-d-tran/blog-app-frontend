@@ -10,7 +10,7 @@ function PostList() {
   return (
     <section className="post-list">
       <NewPostForm />
-      {posts ? (
+      {posts.lenght>0 ? (
         posts.map((post) => <Post key={post._id} post={post} />)
       ) : (
         <p>loading</p>
