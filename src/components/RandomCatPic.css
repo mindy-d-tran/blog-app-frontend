@@ -1,10 +1,10 @@
 .random-cat-pic {
   width: 30vw;
   height: fit-content;
-  /* margin: 1em; */
+
   padding: 1em;
   background-color: var(--cream);
-  /* border-left: 5px solid var(--main-color); */
+
 }
 .random-cat-pic img{
     width: 100%;
