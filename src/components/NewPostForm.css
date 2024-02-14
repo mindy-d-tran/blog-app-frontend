@@ -1,0 +1,15 @@
+.create-post-container {
+  padding-bottom: 1em;
+  display: flex;
+  border-bottom: 2px solid var(--main-color);
+}
+.new-post-form {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+#new-post-content {
+  height: 100px;
+  resize: none;
+}
