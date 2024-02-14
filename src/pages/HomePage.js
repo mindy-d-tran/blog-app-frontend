@@ -22,7 +22,7 @@ function HomePage() {
   return (
     <div className="home-page-container">
       <PostsContext.Provider value={{posts, setPosts}}>
-        <PostList posts={posts} />
+        <PostList />
       </PostsContext.Provider>
       <RandomCatPic />
     </div>
