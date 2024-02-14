@@ -8,8 +8,22 @@
   flex-direction: column;
   flex-grow: 1;
 }
-
+.new-post-form button {
+  margin-top: 1em;
+  padding: 0.25em 1em;
+  align-self: end;
+}
+#new-post-content, #new-post-title{
+  outline-color: var(--dark-color);
+  border-color: var(--main-color);
+  border-style: solid;
+}
 #new-post-content {
-  height: 100px;
+  height: 75px;
+  padding: 0.25em;
   resize: none;
+}
+#new-post-title {
+  padding: 0.25em;
+  margin-bottom: 5px;
 }
