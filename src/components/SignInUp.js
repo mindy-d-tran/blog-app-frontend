@@ -105,6 +105,8 @@ function SignInUp(props) {
               id="password"
               type="text"
               placeholder="Password"
+              minLength={8}
+              maxLength={30}
             />
             <label htmlFor="passwordCheck">Confirm Password</label>
             <input
@@ -114,6 +116,8 @@ function SignInUp(props) {
               name="passwordCheck"
               type="text"
               placeholder="Confirm Password"
+              minLength={8}
+              maxLength={30}
             />
             <button type="submit">Sign Up</button>
           </form>
@@ -149,6 +153,8 @@ function SignInUp(props) {
               id="passwordSI"
               type="password"
               placeholder="Password"
+              minLength={8}
+              maxLength={30}
             />
 
             {errMsg.includes(["match"]) ? <p>{errMsg}</p> : <></>}
