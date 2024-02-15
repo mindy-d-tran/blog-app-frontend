@@ -91,6 +91,8 @@ function SettingPage() {
         }
       );
       console.log(res.data);
+      setcurrentPassword("");
+      setnewPassword("");
     } catch (error) {
       console.log(error);
       setErrMsg(error.response.data);
@@ -124,10 +126,7 @@ function SettingPage() {
       </div>
       <form onSubmit={handleSubmitEmail}>
         <div className="edit-email">
-          <label className="klee-one-semibold">
-            {" "}
-            Email 
-          </label>
+          <label className="klee-one-semibold"> Email</label>
           <FontAwesomeIcon icon={faPen} onClick={handleShowEditEmail} />
         </div>
         {editEmail ? (
@@ -155,6 +154,8 @@ function SettingPage() {
           type="text"
           placeholder="Current Password"
         />
+        {errMsg ? <p>Current password does not match with what is in the system</p> : <></>}
+
         <input
           onChange={(e) => setnewPassword(e.target.value)}
           type="text"
