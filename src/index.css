@@ -20,6 +20,12 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /*code polka dot code from https://screenspan.net/polka/*/
+  background-image: 
+    radial-gradient(rgb(253, 226, 226) 10%, transparent 10%),
+    radial-gradient(rgb(253, 226, 226) 10%, transparent 10%);
+  background-position: 0px 0px, 24px 24px;
+  background-size: 48px 48px;
   background-color: var(--cream);
   color: var(--text-color);
 }
@@ -36,7 +42,12 @@ body {
   font-style: normal;
 }
 
-h1, h2, h3, h4, h5, h6{
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: "Klee One", cursive;
 }
 
