@@ -54,7 +54,9 @@ svg {
   display: flex;
   justify-content: space-between;
 }
-
+.postbuttons svg:last-child{
+  cursor: pointer;
+}
 .userDisplay-small {
   display: flex;
   align-items: flex-start;

@@ -27,7 +27,7 @@ function App() {
         <Routes>
           <Route path="/" element={<MainPage />} />
           <Route path="/post/:id" element={<PostPage />} />
-          <Route path="/setting" element={<SettingPage />} />
+          <Route path="/settings" element={<SettingPage />} />
         </Routes>
       </div>
     </UserContext.Provider>
