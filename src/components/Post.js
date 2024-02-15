@@ -97,7 +97,7 @@ function Post({ post }) {
             <FontAwesomeIcon
               onClick={() =>
                 navigator.clipboard.writeText(
-                  `${window.location.host}/post/${postState._id}`
+                  `https://${window.location.host}/post/${postState._id}`
                 )
               }
               icon={faShareFromSquare}
