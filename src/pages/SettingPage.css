@@ -22,7 +22,7 @@
   display: flex;
   align-items: center;
 }
-.userDisplay p{
+.username{
   font-size: 30px;
 }
 .settings svg {

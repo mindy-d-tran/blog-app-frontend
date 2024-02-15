@@ -114,11 +114,11 @@ function SettingPage() {
               type="text"
               value={username}
             />
-            {errMsg ? <p>Username is already taken</p> : <></>}
             <button type="submit">submit</button>
+            {errMsg ? <p>Username is already taken</p> : <></>}
           </form>
         ) : (
-          <p>{user.username}</p>
+          <p className="username">{user.username}</p>
         )}
         <FontAwesomeIcon icon={faPen} onClick={handleShowEditUsername} />
       </div>
