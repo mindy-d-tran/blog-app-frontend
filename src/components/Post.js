@@ -3,12 +3,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faHeart,
   faChartSimple,
-} from "@fortawesome/free-solid-svg-icons";
-import {
-  faHeart as fasHeart,
   faComment,
   faShareFromSquare,
-} from "@fortawesome/free-regular-svg-icons";
+} from "@fortawesome/free-solid-svg-icons";
+import { faHeart as fasHeart } from "@fortawesome/free-regular-svg-icons";
 import { useContext, useState } from "react";
 import ProfilePic from "../assets/cat_logo_transparent.png";
 
@@ -73,7 +71,7 @@ function Post({ post }) {
             <p className="post-content">{postState.post_content.text}</p>
           </Link>
 
-          <p>hash tags</p>
+          {/* <p>hash tags</p> */}
           <section className="postbuttons">
             <span>
               {postState.post_likes.find((p) => p.user_id === user._id) ? (
@@ -95,7 +93,15 @@ function Post({ post }) {
             <span>
               <FontAwesomeIcon icon={faChartSimple} /> {post.post_views}{" "}
             </span>
-            <FontAwesomeIcon icon={faShareFromSquare} />
+            {/* code from https://stackoverflow.com/questions/39501289/in-reactjs-how-to-copy-text-to-clipboard to copy link */}
+            <FontAwesomeIcon
+              onClick={() =>
+                navigator.clipboard.writeText(
+                  `${window.location.host}/post/${postState._id}`
+                )
+              }
+              icon={faShareFromSquare}
+            />
           </section>
         </section>
       ) : (
