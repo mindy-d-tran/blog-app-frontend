@@ -2,17 +2,20 @@ import "./NavBar.css";
 import { Link } from "react-router-dom";
 
 function NavBar() {
+  const navBarItems = [
+    { text: "Home", href: "/" },
+    { text: "Settings", href: "/settings" },
+  ];
+
   return (
     <nav>
       <ul>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-
-        <li>
-          <Link to="/setting">Setting</Link>
-        </li>
-        {/* <li>
+      {navBarItems.map((n,i) => (
+          <li key={i}>
+            <Link to={n.href}>{n.text}</Link>
+          </li>
+      ))}
+      {/* <li>
           <form>
             <input type="text" placeholder="Search" />
             <button>search</button>
