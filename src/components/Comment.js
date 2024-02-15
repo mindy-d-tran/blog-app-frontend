@@ -59,7 +59,7 @@ function Comment({ comment }) {
           )}{" "}
           {commentState.comment_like.length}{" "}
         </span>
-        <FontAwesomeIcon icon={faShareFromSquare} />
+        {/* <FontAwesomeIcon icon={faShareFromSquare} /> */}
       </section>
     </div>
   );
