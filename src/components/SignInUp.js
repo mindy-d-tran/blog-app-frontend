@@ -43,6 +43,7 @@ function SignInUp(props) {
 
       console.log(res.data);
       setUser(res.data);
+      // localStorage("user", JSON.stringify(res.data));
       setErrMsg("");
     } catch (error) {
       console.log(error);
@@ -57,9 +58,9 @@ function SignInUp(props) {
         emailOrUsername: emailOrUsernameInputRef.current.value,
         password: passwordSIInputRef.current.value,
       });
-
       console.log(res.data);
       setUser(res.data);
+      localStorage.setItem("user", JSON.stringify(res.data));
       setErrMsg("");
     } catch (error) {
       console.log(error);
