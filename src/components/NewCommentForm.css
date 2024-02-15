@@ -1,0 +1,19 @@
+.comment-list .create-container {
+  margin-top: 1em;
+}
+.new-comment-form {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+.new-comment-form button {
+  margin-top: 1em;
+  padding: 0.25em 1em;
+  align-self: end;
+}
+
+#newComment {
+  height: 75px;
+  padding: 0.25em;
+  resize: none;
+}

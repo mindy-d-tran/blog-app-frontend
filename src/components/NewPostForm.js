@@ -36,7 +36,7 @@ function NewPostForm() {
   };
 
   return (
-    <div className="create-post-container">
+    <div className="create-container">
       <div className="userDisplay-small">
         <img className="user-post-icon" src={ProfilePic} alt="user icon" />
       </div>

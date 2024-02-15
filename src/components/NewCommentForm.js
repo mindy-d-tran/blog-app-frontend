@@ -4,6 +4,9 @@ import { useState, useContext } from "react";
 import { UserContext } from "../context/UserContext";
 import { CommentContext } from "../context/CommentContext";
 
+import ProfilePic from "../assets/cat_logo_transparent.png";
+import './NewCommentForm.css'
+
 function NewCommentForm({ postID }) {
   const userCtx = useContext(UserContext);
   const { user } = userCtx;
@@ -22,7 +25,9 @@ function NewCommentForm({ postID }) {
         comment_content: newComment,
       });
       console.log(res.data);
-      const resComments = await axios.get(`http://localhost:4000/api/comments/post/${postID}`);
+      const resComments = await axios.get(
+        `http://localhost:4000/api/comments/post/${postID}`
+      );
       setComments(resComments.data);
     } catch (error) {
       console.log(error);
@@ -30,16 +35,22 @@ function NewCommentForm({ postID }) {
   };
 
   return (
-    <form onSubmit={handleOnSubmit}>
-      <input
-        onChange={(e) => {
-          setNewComment(e.target.value);
-        }}
-        type="text"
-        value={newComment}
-      />
-      <button>submit</button>
-    </form>
+    <div className="create-container">
+      <div className="userDisplay-small">
+        <img className="user-post-icon" src={ProfilePic} alt="user icon" />
+      </div>
+      <form className="new-comment-form" onSubmit={handleOnSubmit}>
+        <textarea
+          id="newComment"
+          onChange={(e) => {
+            setNewComment(e.target.value);
+          }}
+          type="text"
+          value={newComment}
+        />
+        <button>submit</button>
+      </form>
+    </div>
   );
 }
 

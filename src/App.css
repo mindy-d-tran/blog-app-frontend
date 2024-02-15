@@ -22,7 +22,7 @@ svg {
   border-right: 5px solid var(--main-color);
 
 }
-.post-body{
+.post-body, .comment{
   margin: 1em 0;
   padding: 1em 0;
   background-color: var(--cream);
@@ -31,8 +31,14 @@ svg {
 }
 .post-comment {
   width: 60vw;
-  margin: 2em 0;
+  margin: 3.5em 0;
+  padding: 1em 2em;
   background-color: var(--cream);
+  border: 5px solid var(--main-color);
+  border-top: 2.5em solid var(--main-color);
+  border-radius: 2em;
+  overflow: hidden;
+  box-shadow: #e9d6d2 3px -3px 10px 2px;
 }
 .post-comment > .post-body {
   margin: 0;
@@ -40,11 +46,15 @@ svg {
 }
 .post-img-gallery img {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
-.comment {
-  margin: 1em 0;
-  background-color: var(--accent-color);
+
+.postbuttons{
+  display: flex;
+  justify-content: space-between;
 }
+
 .userDisplay-small {
   display: flex;
   align-items: flex-start;

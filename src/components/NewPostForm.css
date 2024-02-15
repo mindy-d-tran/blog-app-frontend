@@ -1,4 +1,4 @@
-.create-post-container {
+.create-container {
   padding-bottom: 1em;
   display: flex;
   border-bottom: 2px solid var(--main-color);
